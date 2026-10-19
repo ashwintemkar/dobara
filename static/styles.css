@@ -1,0 +1,202 @@
+:root {
+  --ink: #1c1915;
+  --muted: #5c564c;
+  --paper: #f4f0e6;
+  --card: #fffdf8;
+  --line: #ddd4c4;
+  --free: #1f6b4a;
+  --labor: #8a5a12;
+  --paid: #1e4d7b;
+  --stop: #8d2d2d;
+  --stamp: #f3e6d4;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  color: var(--ink);
+  background: var(--paper);
+  font: 17px/1.45 "Segoe UI", sans-serif;
+}
+
+header.top, main, .floor, footer {
+  width: min(1100px, calc(100% - 32px));
+  margin: 0 auto;
+}
+
+header.top {
+  display: grid;
+  grid-template-columns: 220px 1fr;
+  gap: 24px;
+  align-items: end;
+  padding: 28px 0 8px;
+}
+
+.eyebrow {
+  margin: 0;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  font-size: 12px;
+  color: var(--muted);
+}
+
+h1 {
+  margin: 4px 0 0;
+  font-family: Georgia, serif;
+  font-size: 56px;
+  font-weight: 500;
+  line-height: 0.9;
+}
+
+h2 {
+  margin: 0 0 10px;
+  font-size: 15px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.lede { margin: 0; color: var(--muted); }
+
+main {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 18px;
+  padding: 18px 0;
+}
+
+.counter, .slip, .floor {
+  background: var(--card);
+  border: 1px solid var(--line);
+  padding: 16px;
+}
+
+.walkins { display: grid; gap: 8px; margin-bottom: 14px; }
+
+.walkins button, button, input, textarea {
+  font: inherit;
+  color: inherit;
+}
+
+.walkins button {
+  text-align: left;
+  background: var(--paper);
+  border: 1px solid var(--line);
+  padding: 10px 12px;
+  cursor: pointer;
+}
+
+.walkins button strong { display: block; }
+
+.walkins button span { color: var(--muted); font-size: 14px; }
+
+label, .hint, .status, footer p { color: var(--muted); }
+
+textarea, input {
+  width: 100%;
+  border: 1px solid var(--line);
+  background: #fff;
+  padding: 10px;
+}
+
+textarea { resize: vertical; }
+
+.row, .grid { display: flex; gap: 8px; margin: 10px 0; flex-wrap: wrap; align-items: end; }
+
+.grid label { display: grid; gap: 4px; font-size: 14px; color: var(--muted); }
+
+.grid input, .grid select, .grid textarea { width: 180px; }
+
+.grid textarea, .wide { width: min(420px, 100%); }
+
+.wide textarea { width: 100%; }
+
+.check { display: flex; gap: 6px; align-items: center; }
+
+button {
+  background: var(--ink);
+  color: var(--paper);
+  border: 0;
+  padding: 10px 14px;
+  cursor: pointer;
+}
+
+button.ghost {
+  background: transparent;
+  color: var(--ink);
+  border: 1px solid var(--line);
+}
+
+.slip-card { border-top: 4px solid var(--ink); padding-top: 8px; }
+
+.slip-card.free_comeback { border-color: var(--free); }
+.slip-card.labor_only { border-color: var(--labor); }
+.slip-card.new_paid { border-color: var(--paid); }
+.slip-card.collect_first { border-color: var(--stop); }
+
+.outcome {
+  display: inline-block;
+  margin: 0 0 8px;
+  padding: 2px 8px;
+  background: var(--stamp);
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  font-size: 13px;
+}
+
+.amount { font-family: Georgia, serif; font-size: 32px; margin: 0; }
+
+.path { list-style: none; padding: 0; margin: 14px 0; }
+
+.path li {
+  display: grid;
+  grid-template-columns: 110px 1fr;
+  gap: 8px;
+  padding: 8px 0;
+  border-top: 1px solid var(--line);
+}
+
+.kind { color: var(--muted); font-size: 13px; text-transform: uppercase; letter-spacing: 0.04em; }
+
+details { color: var(--muted); font-size: 13px; }
+
+pre {
+  white-space: pre-wrap;
+  background: var(--paper);
+  padding: 8px;
+  overflow: auto;
+}
+
+.floor {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1.3fr;
+  gap: 16px;
+  margin-bottom: 16px;
+}
+
+ul { list-style: none; padding: 0; margin: 0; }
+
+li + li { margin-top: 8px; }
+
+.tag {
+  display: inline-block;
+  margin-right: 6px;
+  font-size: 12px;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+footer {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  align-items: center;
+  padding-bottom: 28px;
+}
+
+@media (max-width: 800px) {
+  header.top, main, .floor { grid-template-columns: 1fr; }
+  h1 { font-size: 44px; }
+  .row { flex-direction: column; }
+}

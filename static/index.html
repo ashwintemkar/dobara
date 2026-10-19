@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Dobara</title>
+  <link rel="stylesheet" href="/static/styles.css" />
+</head>
+<body>
+  <header class="top">
+    <div>
+      <p class="eyebrow">Repair counter</p>
+      <h1>Dobara</h1>
+    </div>
+    <p class="lede">Add the customer and the jobs you actually have. Gemma reads the new complaint against that book and writes the slip. The floor updates as soon as the decision is saved.</p>
+  </header>
+  <p id="status" class="status"></p>
+  <main>
+    <section>
+      <h2>Shop rule</h2>
+      <form id="policy" class="grid">
+        <label>Comeback days <input name="comeback_days" type="number" min="0" required /></label>
+        <label>Labor Rs <input name="labor_inr" type="number" min="0" required /></label>
+        <label>Touch quote <input name="touch_quote" type="number" min="0" required /></label>
+        <label>Battery quote <input name="battery_quote" type="number" min="0" required /></label>
+        <label>Charging quote <input name="charging_quote" type="number" min="0" required /></label>
+        <button type="submit">Save rule</button>
+      </form>
+
+      <h2>Technician</h2>
+      <form id="tech" class="grid">
+        <label>Name <input name="name" required /></label>
+        <label class="check"><input name="touch" type="checkbox" /> touch</label>
+        <label class="check"><input name="battery" type="checkbox" /> battery</label>
+        <label class="check"><input name="charging" type="checkbox" /> charging</label>
+        <button type="submit">Add technician</button>
+      </form>
+
+      <h2>Customer</h2>
+      <form id="customer" class="grid">
+        <label>Name <input name="name" required /></label>
+        <label>Phone <input name="phone" inputmode="numeric" required /></label>
+        <label>Model <input name="model" required /></label>
+        <label>IMEI <input name="imei" /></label>
+        <button type="submit">Add customer</button>
+      </form>
+
+      <h2>Job already on the book</h2>
+      <form id="job" class="grid">
+        <label>Phone <input name="phone" required /></label>
+        <label>Fault
+          <select name="fault">
+            <option>touch</option>
+            <option>battery</option>
+            <option>charging</option>
+          </select>
+        </label>
+        <label>Amount Rs <input name="amount_inr" type="number" min="0" required /></label>
+        <label>Technician <input name="technician" /></label>
+        <label>Part <input name="part_name" /></label>
+        <label>Supplier <input name="supplier" /></label>
+        <label>Warranty days <input name="warranty_days" type="number" min="0" /></label>
+        <label>Opened <input name="opened_on" type="date" /></label>
+        <label>Closed <input name="closed_on" type="date" /></label>
+        <label class="check"><input name="paid" type="checkbox" /> paid and closed</label>
+        <button type="submit">Add job</button>
+      </form>
+
+      <h2>New complaint</h2>
+      <form id="complaint" class="grid">
+        <label>Phone <input name="phone" required /></label>
+        <label class="wide">What they said
+          <textarea name="complaint" rows="3" required placeholder="touch phir se nahi chal raha"></textarea>
+        </label>
+        <button type="submit">Ask Gemma</button>
+      </form>
+    </section>
+
+    <section>
+      <h2>Latest slip</h2>
+      <div id="slip"><p class="empty">No decision yet.</p></div>
+      <h2>On the floor</h2>
+      <ul id="techs"></ul>
+      <h2>Customers</h2>
+      <ul id="customers"></ul>
+      <h2>Jobs</h2>
+      <ul id="jobs"></ul>
+      <h2>Decisions</h2>
+      <ul id="decisions"></ul>
+    </section>
+  </main>
+  <script type="module" src="/static/app.js"></script>
+</body>
+</html>
